@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101820">
+    <title>Minesweeper</title>
+    <link rel="stylesheet" href="/app.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="topbar">
+        <a class="brand" href="/" aria-label="Minesweeper home">
+          <span class="brand-icon" aria-hidden="true">✳</span>
+          <span>MINESWEEPER</span>
+        </a>
+        <span class="edition">CLASSIC EDITION</span>
+      </header>
+
+      <section id="chooser" class="chooser" aria-labelledby="page-title" hidden>
+        <div class="intro">
+          <p class="eyebrow">THINK AHEAD. STAY ALIVE.</p>
+          <h1 id="page-title">Clear the field.</h1>
+          <p class="subtitle">Pick your difficulty. Your first click is always safe.</p>
+        </div>
+        <div id="difficulty-list" class="difficulty-list"></div>
+        <p id="chooser-status" class="status" role="status" aria-live="polite" hidden></p>
+        <p class="help">Left-click to reveal <span aria-hidden="true">·</span> Right-click to flag</p>
+      </section>
+
+      <section id="game" class="game-view" aria-label="Minesweeper game" hidden>
+        <div class="game-heading">
+          <div>
+            <p class="eyebrow" id="difficulty-name"></p>
+            <h1>Clear the field.</h1>
+          </div>
+          <button id="change-difficulty" class="text-button" type="button">Change difficulty</button>
+        </div>
+
+        <div class="game-card">
+          <div class="hud">
+            <div class="counter">
+              <span class="hud-icon" aria-hidden="true">✹</span>
+              <span id="mine-count" aria-label="Mines remaining">000</span>
+              <span class="hud-caption">MINES</span>
+            </div>
+            <button id="restart" class="restart" type="button" aria-label="Restart game">↻</button>
+            <div class="counter timer">
+              <span class="hud-icon" aria-hidden="true">◷</span>
+              <span id="time-count" aria-label="Elapsed time">000</span>
+              <span class="hud-caption">TIME</span>
+            </div>
+          </div>
+          <p id="status" class="status" role="status" aria-live="polite"></p>
+          <div class="board-scroll">
+            <div id="board" class="board" role="grid" aria-label="Minesweeper board"></div>
+          </div>
+        </div>
+        <p class="help game-help">Left-click to reveal <span aria-hidden="true">·</span> Right-click to flag</p>
+      </section>
+    </main>
+    <footer>ONE WRONG MOVE CHANGES EVERYTHING.</footer>
+  </body>
+</html>
